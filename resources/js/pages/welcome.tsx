@@ -13,7 +13,15 @@ export default function Welcome() {
       {/* Header */}
       <header className="bg-transparent text-green-900 p-6 fixed top-0 left-0 w-full z-50">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Barangay Turod</h1>
+          {/* Logo Picture Button */}
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo.png" // Replace with the path to your logo image
+              alt="Barangay Turod Logo"
+              className="h-20 w-20 object-contain"
+            />
+          </Link>
+
           {/* Hamburger Menu for Mobile */}
           <div className="lg:hidden">
             <button
@@ -53,6 +61,7 @@ export default function Welcome() {
               )}
             </button>
           </div>
+
           {/* Navigation Links */}
           <nav
             className={`${

@@ -34,9 +34,17 @@ export default function BulletinBoard({ posts }: { posts: Post[] }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-100 to-white text-gray-800">
       {/* Header */}
-      <header className="bg-white/70 backdrop-blur-md text-green-900 p-6 fixed top-0 left-0 w-full z-50 shadow-md">
+      <header className="bg-white/70 backdrop-blur-md text-green-900 p-4 fixed top-0 left-0 w-full z-50 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Barangay Turod</h1>
+          {/* Logo Picture Button */}
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo.png" // Replace with the path to your logo image
+              alt="Barangay Turod Logo"
+              className="h-12 w-12 object-contain" // Reduced size
+            />
+          </Link>
+
           {/* Hamburger Menu for Mobile */}
           <div className="lg:hidden">
             <button
@@ -46,7 +54,7 @@ export default function BulletinBoard({ posts }: { posts: Post[] }) {
               {isMenuOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
+                  className="h-6 w-6" // Reduced size
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -61,7 +69,7 @@ export default function BulletinBoard({ posts }: { posts: Post[] }) {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
+                  className="h-6 w-6" // Reduced size
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -76,17 +84,18 @@ export default function BulletinBoard({ posts }: { posts: Post[] }) {
               )}
             </button>
           </div>
+
           {/* Navigation Links */}
           <nav
             className={`${
               isMenuOpen ? 'block' : 'hidden'
-            } lg:block absolute lg:static top-16 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none`}
+            } lg:block absolute lg:static top-12 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none`}
           >
-            <ul className="flex flex-col lg:flex-row lg:items-center lg:space-x-6">
+            <ul className="flex flex-col lg:flex-row lg:items-center lg:space-x-4">
               <li>
                 <Link
                   href="/"
-                  className="block px-4 py-2 text-green-900 hover:underline"
+                  className="block px-3 py-1 text-green-900 hover:underline text-sm" // Reduced padding and font size
                 >
                   Home
                 </Link>
@@ -94,7 +103,7 @@ export default function BulletinBoard({ posts }: { posts: Post[] }) {
               <li>
                 <Link
                   href="/bulletin-board"
-                  className="block px-4 py-2 text-green-900 hover:underline"
+                  className="block px-3 py-1 text-green-900 hover:underline text-sm" // Reduced padding and font size
                 >
                   Bulletin Board
                 </Link>
@@ -102,7 +111,7 @@ export default function BulletinBoard({ posts }: { posts: Post[] }) {
               <li>
                 <Link
                   href="/officials"
-                  className="block px-4 py-2 text-green-900 hover:underline"
+                  className="block px-3 py-1 text-green-900 hover:underline text-sm" // Reduced padding and font size
                 >
                   Officials
                 </Link>
